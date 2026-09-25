@@ -1,9 +1,16 @@
 export type SiteImage = { src: string; alt: string };
 
-// Generated with Higgsfield (GPT Image 2). Atmospheric photography only: no people,
-// no real landmarks, and nothing presented as a real case, client, or the attorney.
-// Replace with real photography (office, attorney portrait) once the client supplies it.
+// Site imagery. The attorney portrait below is the client's own headshot. Every other
+// image was generated with Higgsfield (GPT Image 2) and is atmospheric only: no people,
+// no real landmarks, and nothing presented as a real case or client. Replace the
+// generated office photography with real photos once the client supplies them.
 export const IMAGES = {
+  aviaPortrait: {
+    // Client-supplied headshot, upscaled with Higgsfield from a 150px thumbnail.
+    // TODO(client): replace with the full-resolution original headshot file.
+    src: "/images/avia-gauthier.jpg",
+    alt: "Avia Gauthier, criminal defense attorney at Gauthier Law Firm",
+  },
   heroSkyline: {
     src: "/images/hero-skyline.jpg",
     alt: "Downtown skyline at dusk with warm lights glowing in the office towers",

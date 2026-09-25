@@ -3,7 +3,7 @@ import Link from "next/link";
 import { pageMetadata } from "@/lib/seo";
 import { FIRM } from "@/lib/site";
 import { LOCATIONS, PRACTICE_AREAS, ROUTES } from "@/lib/routes";
-import { attorneySchema } from "@/lib/schema";
+import { absoluteUrl, attorneySchema } from "@/lib/schema";
 import { IMAGES } from "@/content/images";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Hero } from "@/components/ui/Hero";
@@ -16,6 +16,8 @@ import { CtaBand } from "@/components/ui/CtaBand";
 // No credentials, education, bar admissions, awards, or years in practice were
 // supplied. Every such fact stays a bracketed placeholder until the client verifies
 // it — and verified facts should then also be passed to attorneySchema().
+// The portrait is the client's headshot, upscaled from a 150px thumbnail; swap in
+// the full-resolution original when it is available.
 
 export const metadata = pageMetadata({
   title: "Avia Gauthier, Dallas Criminal Defense Attorney",
@@ -53,7 +55,7 @@ const APPROACH = [
 export default function AttorneyPage() {
   return (
     <>
-      <JsonLd data={attorneySchema()} />
+      <JsonLd data={attorneySchema({ image: absoluteUrl(IMAGES.aviaPortrait.src) })} />
       <Hero
         image={IMAGES.lawLibrary}
         eyebrow="About the Attorney"
@@ -69,20 +71,18 @@ export default function AttorneyPage() {
       <Section>
         <div className="grid items-start gap-14 lg:grid-cols-12">
           <div className="lg:col-span-5">
-            {/* TODO(client): replace with a professional portrait of Avia Gauthier. */}
-            <div className="relative mx-auto aspect-[4/5] max-w-md overflow-hidden rounded-sm border border-gold/40 bg-navy">
+            <div className="relative mx-auto aspect-square max-w-md overflow-hidden rounded-sm border border-gold/40 bg-navy">
               <Image
-                src="/brand/logo-mark.png"
-                alt=""
-                aria-hidden="true"
-                width={255}
-                height={256}
-                className="absolute top-1/2 left-1/2 w-24 -translate-x-1/2 -translate-y-1/2 opacity-30"
+                src={IMAGES.aviaPortrait.src}
+                alt={IMAGES.aviaPortrait.alt}
+                fill
+                sizes="(min-width: 1024px) 40vw, 100vw"
+                className="object-cover"
               />
-              <p className="absolute inset-x-0 bottom-8 text-center text-sm tracking-wide text-mist">
-                [INSERT ATTORNEY PORTRAIT]
-              </p>
             </div>
+            <p className="mt-4 text-center text-sm text-mist">
+              {FIRM.attorney}, {FIRM.name}
+            </p>
           </div>
           <div className="lg:col-span-7">
             <SectionHeading eyebrow="Biography" title="About Avia Gauthier" />
