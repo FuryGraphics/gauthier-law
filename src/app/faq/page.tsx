@@ -10,61 +10,71 @@ import { FaqAccordion } from "@/components/ui/FaqAccordion";
 import { LegalInfoNote } from "@/components/ui/LegalInfoNote";
 import { CtaBand } from "@/components/ui/CtaBand";
 
-// General FAQ. Per the schema strategy, FAQPage schema is reserved for the three
+// General FAQ. Per the schema strategy, FAQPage schema is reserved for the
 // practice-area pages, so this accordion does not emit it.
 
 export const metadata = pageMetadata({
-  title: "Criminal Defense FAQ",
+  title: "Personal Injury FAQ",
   description:
-    "Answers to common questions about criminal charges in Texas: arrests, bail, court dates, records, and working with Dallas defense attorney Avia Gauthier.",
+    "Answers to common questions about Texas injury claims: deadlines, fault, insurance offers, medical bills, and working with Dallas lawyer Avia Gauthier.",
   path: ROUTES.faq,
 });
 
 const GROUPS: { id: string; title: string; faqs: Faq[] }[] = [
   {
-    id: "after-arrest",
-    title: "After an Arrest",
+    id: "after-an-injury",
+    title: "Right After an Injury",
     faqs: [
       {
-        question: "Do I have to answer police questions?",
+        question: "Do I need to see a doctor if I feel okay?",
         answer:
-          "Generally, no. You have the right to remain silent, and you can tell officers you want to speak with a lawyer before answering questions. You should still identify yourself when lawfully required and never physically resist an officer.",
+          "It's usually wise. Adrenaline masks pain, and injuries to the neck, back, and head often surface days later. Being examined protects your health and creates the record that connects an injury to the crash or fall. Long gaps between the incident and treatment are one of the first things an insurer points to.",
       },
       {
-        question: "How does bail work in Texas?",
+        question: "Should I talk to the other side's insurance company?",
         answer:
-          "After an arrest, a person is typically brought before a magistrate, who sets bail and any bond conditions. Bond may be posted in cash, through a surety bond company, or in some cases on a personal bond. Bond conditions, such as no-contact orders or ignition interlock requirements, must be followed carefully.",
+          "You generally aren't required to give a recorded statement to the other party's insurer, and doing so early, before you know how badly you're hurt, can work against you. You do usually have obligations to your own insurer under your policy. Getting advice before that call is reasonable.",
       },
       {
-        question: "What if I missed a court date?",
+        question: "What evidence matters most?",
         answer:
-          "Contact a criminal defense attorney right away. Missing court can lead to a warrant and a new charge, but addressing it quickly can sometimes limit the consequences.",
+          "Photographs of the scene and the damage, the crash or incident report, names and numbers for witnesses, and your medical records. Surveillance video matters enormously in fall cases and is often erased within days unless someone asks for it to be preserved.",
       },
     ],
   },
   {
-    id: "the-case",
-    title: "Your Case",
+    id: "your-claim",
+    title: "Your Claim",
     faqs: [
       {
-        question: "What's the difference between a misdemeanor and a felony?",
+        question: "How long do I have to bring a claim in Texas?",
         answer:
-          "In Texas, misdemeanors are divided into Class A, B, and C offenses and are punishable by fines and up to one year in county jail. Felonies are more serious and range from state jail felonies to capital felonies, with possible prison sentences.",
+          "Most injury lawsuits must be filed within two years of the date of the injury. Some circumstances change that, and claims involving a governmental unit often require written notice much sooner. Because a missed deadline can end a claim no matter how strong it is, the dates should be confirmed early.",
       },
       {
-        question: "What is deferred adjudication?",
+        question: "What if I was partly at fault?",
         answer:
-          "Deferred adjudication is a form of community supervision in which a judge postpones a finding of guilt. If the conditions are completed successfully, the case is dismissed without a conviction. It isn't available for every offense and can still have consequences, so it should be discussed with an attorney before it's accepted.",
+          "You may still recover. Texas reduces your recovery by your percentage of responsibility and bars recovery entirely if you're found more than 50 percent at fault. Insurers often assign more blame to the injured person than the evidence supports.",
       },
       {
-        question: "Can my record be cleared?",
+        question: "What can an injury claim cover?",
         answer:
-          "Depending on how a case ended, you may be eligible for an expunction, which destroys records of an arrest, or an order of nondisclosure, which seals certain records from the public. Eligibility rules are specific to the offense and outcome.",
+          "Generally medical bills and future care, lost income and lost earning capacity, property damage, and non-economic harm such as physical pain, mental anguish, impairment, and disfigurement. Which apply, and what they're worth, depends on the evidence in your case.",
       },
       {
-        question: "Can you guarantee how my case will turn out?",
+        question: "How much is my case worth?",
         answer:
-          "No. No ethical attorney can guarantee a result. Every case depends on its own facts, the evidence, and the court. Prior results do not guarantee a similar outcome.",
+          "There's no formula, and no honest answer before the facts are reviewed. Value depends on fault, the seriousness and permanence of the injury, the treatment involved, and the insurance actually available. Be cautious of anyone who quotes a number up front. Prior results do not guarantee a similar outcome.",
+      },
+      {
+        question: "Who pays my medical bills while the claim is pending?",
+        answer:
+          "Usually health insurance, medical payments coverage if your auto policy includes it, or arrangements with providers. Health insurers and medical providers may later claim repayment out of a settlement, which is one reason those claims need attention before anything is finalized.",
+      },
+      {
+        question: "Will my case go to trial?",
+        answer:
+          "Most claims settle without a trial, and many settle without a lawsuit ever being filed. Filing suit becomes necessary when the insurer disputes fault or injuries, refuses a reasonable offer, or the deadline is approaching. Even then, most cases resolve before trial.",
       },
     ],
   },
@@ -73,14 +83,19 @@ const GROUPS: { id: string; title: string; faqs: Faq[] }[] = [
     title: "Working With the Firm",
     faqs: [
       {
-        question: "What types of cases does Gauthier Law Firm handle?",
+        question: "What kinds of cases does Gauthier Law Firm handle?",
         answer:
-          "The firm concentrates on criminal defense for DWI, drug charges, and assault family-violence cases in Dallas, Collin, and Denton Counties.",
+          "The firm handles personal injury claims, specifically car accidents and slip and fall injuries, in Dallas, Collin, and Denton Counties.",
+      },
+      {
+        question: "How are legal fees handled?",
+        answer:
+          "Fee arrangements are explained and put in writing before any representation begins. Ask about fees and costs during your consultation so the terms are clear before you decide.",
       },
       {
         question: "What should I bring to a consultation?",
         answer:
-          "Bring any paperwork you received, such as bond documents, a citation, a notice of license suspension, or court notices, along with a list of questions. Please don't send confidential details through the website before speaking with the firm.",
+          "Anything you already have: the crash or incident report, photographs, insurance information, medical records or bills, and letters from any insurance company. A list of your questions helps too.",
       },
       {
         question: "Does contacting the firm create an attorney-client relationship?",
@@ -99,10 +114,10 @@ export default function FaqPage() {
         eyebrow="FAQ"
         title={
           <>
-            Criminal Defense <span className="text-gold-light">Questions</span>
+            Injury Claim <span className="text-gold-light">Questions</span>
           </>
         }
-        subtitle="Straightforward answers to questions people often have after an arrest in Texas."
+        subtitle="Straightforward answers to the questions people ask after a crash or a fall in Texas."
         breadcrumbs={[{ name: "FAQ", path: ROUTES.faq }]}
       />
 
@@ -120,8 +135,8 @@ export default function FaqPage() {
       ))}
 
       <Section tone="navy">
-        <SectionHeading eyebrow="Charge-Specific Questions" title="Questions About a Specific Charge" />
-        <ul className="mt-10 grid gap-4 md:grid-cols-3">
+        <SectionHeading eyebrow="Claim-Specific Questions" title="Questions About a Specific Claim" />
+        <ul className="mt-10 grid gap-4 md:grid-cols-2">
           {PRACTICE_AREAS.map((area) => (
             <li key={area.href}>
               <Link
@@ -134,9 +149,9 @@ export default function FaqPage() {
           ))}
         </ul>
         <p className="mt-8 text-mist">
-          Recently arrested? Read{" "}
-          <Link href={ROUTES.afterArrest} className="text-gold-light underline underline-offset-4">
-            what to do after an arrest
+          Recently hurt? Read{" "}
+          <Link href={ROUTES.afterAccident} className="text-gold-light underline underline-offset-4">
+            what to do after a car accident
           </Link>{" "}
           or call {FIRM.phone}.
         </p>

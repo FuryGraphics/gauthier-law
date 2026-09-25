@@ -56,7 +56,7 @@ export default function DisclaimerPage() {
 
       <h2>Jurisdiction</h2>
       <p>
-        {FIRM.name} focuses on criminal defense matters in Texas, primarily in Dallas, Collin, and Denton Counties. The
+        {FIRM.name} focuses on personal injury matters in Texas, primarily in Dallas, Collin, and Denton Counties. The
         firm does not seek to represent anyone based solely on visiting this website in a jurisdiction where this website
         may not comply with applicable laws and rules.
       </p>

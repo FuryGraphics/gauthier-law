@@ -35,7 +35,7 @@ export function Footer() {
         <div className="lg:col-span-4">
           <Logo />
           <p className="mt-5 max-w-xs leading-relaxed">
-            Criminal defense for DWI, drug, and assault family-violence charges in Dallas, Collin, and Denton Counties.
+            Personal injury representation for car accident and slip and fall claims in Dallas, Collin, and Denton Counties.
           </p>
           <address className="mt-6 space-y-3 not-italic">
             <p className="flex gap-3">

@@ -11,7 +11,7 @@ type PageSeo = {
   title: string;
   /** 150–160 characters. Enforced at build time. */
   description: string;
-  /** Route path, e.g. "/practice-areas/dwi". Becomes the canonical and og:url. */
+  /** Route path, e.g. "/practice-areas/car-accidents". Becomes the canonical and og:url. */
   path: string;
   ogType?: "website" | "profile" | "article";
 };
@@ -33,7 +33,7 @@ export function pageMetadata({ title, description, path, ogType = "website" }: P
   const fullTitle = `${title}${TITLE_SUFFIX}`;
   // Setting `openGraph` on a page replaces the parent's, which drops the root
   // app/opengraph-image on nested routes — so reference it explicitly.
-  const image = { url: OG_IMAGE_PATH, width: 1200, height: 630, alt: `${FIRM.name}, criminal defense in Dallas, Texas` };
+  const image = { url: OG_IMAGE_PATH, width: 1200, height: 630, alt: `${FIRM.name}, personal injury lawyer in Dallas, Texas` };
   return {
     title: { absolute: fullTitle },
     description,

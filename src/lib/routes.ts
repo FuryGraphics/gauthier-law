@@ -9,7 +9,7 @@ export const ROUTES = {
   attorney: "/attorney-avia-gauthier",
   practiceAreas: "/practice-areas",
   locations: "/locations",
-  afterArrest: "/what-to-do-after-an-arrest",
+  afterAccident: "/what-to-do-after-a-car-accident",
   testimonials: "/testimonials",
   faq: "/faq",
   contact: "/contact",
@@ -30,28 +30,20 @@ export type PracticeArea = {
 
 export const PRACTICE_AREAS: PracticeArea[] = [
   {
-    slug: "dwi",
-    name: "DWI Defense",
-    href: "/practice-areas/dwi",
+    slug: "car-accidents",
+    name: "Car Accidents",
+    href: "/practice-areas/car-accidents",
     icon: "car",
-    image: IMAGES.dwiRoad,
-    blurb: "Defending drivers accused of DWI, including license suspensions and ALR hearings.",
+    image: IMAGES.carAccident,
+    blurb: "Claims for people hurt in collisions, from insurance negotiations through suit.",
   },
   {
-    slug: "drug-charges",
-    name: "Drug Charges",
-    href: "/practice-areas/drug-charges",
-    icon: "pill",
-    image: IMAGES.caseFiles,
-    blurb: "Defense against possession, delivery, and other controlled-substance charges.",
-  },
-  {
-    slug: "assault-family-violence",
-    name: "Assault Family-Violence",
-    href: "/practice-areas/assault-family-violence",
-    icon: "shield",
-    image: IMAGES.courthouseCorridor,
-    blurb: "Defense against family-violence assault accusations and related protective orders.",
+    slug: "slip-and-fall",
+    name: "Slip and Fall",
+    href: "/practice-areas/slip-and-fall",
+    icon: "hazard",
+    image: IMAGES.slipHazard,
+    blurb: "Premises liability claims for injuries caused by unsafe property conditions.",
   },
 ];
 
@@ -89,13 +81,13 @@ export const PRIMARY_NAV: NavLink[] = [
 export const QUICK_LINKS: NavLink[] = [
   { label: "Home", href: ROUTES.home },
   { label: "About Avia Gauthier", href: ROUTES.attorney },
-  { label: "What to Do After an Arrest", href: ROUTES.afterArrest },
+  { label: "What to Do After a Car Accident", href: ROUTES.afterAccident },
   { label: "Testimonials", href: ROUTES.testimonials },
   { label: "FAQ", href: ROUTES.faq },
   { label: "Contact", href: ROUTES.contact },
 ];
 
-// Sitemap source — all 18 pages.
+// Sitemap source — every page on the site.
 export const SITEMAP_ROUTES: { path: string; priority: number }[] = [
   { path: ROUTES.home, priority: 1 },
   { path: ROUTES.practiceAreas, priority: 0.9 },
@@ -103,7 +95,7 @@ export const SITEMAP_ROUTES: { path: string; priority: number }[] = [
   { path: ROUTES.locations, priority: 0.7 },
   ...LOCATIONS.map((l) => ({ path: l.href, priority: 0.8 })),
   { path: ROUTES.attorney, priority: 0.8 },
-  { path: ROUTES.afterArrest, priority: 0.7 },
+  { path: ROUTES.afterAccident, priority: 0.7 },
   { path: ROUTES.testimonials, priority: 0.6 },
   { path: ROUTES.faq, priority: 0.6 },
   { path: ROUTES.contact, priority: 0.8 },

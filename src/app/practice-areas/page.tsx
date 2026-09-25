@@ -11,28 +11,28 @@ import { InfoCard } from "@/components/ui/InfoCard";
 import { CtaBand } from "@/components/ui/CtaBand";
 
 export const metadata = pageMetadata({
-  title: "Criminal Defense Practice Areas in Dallas",
+  title: "Personal Injury Practice Areas in Dallas",
   description:
-    "Explore Gauthier Law Firm's criminal defense practice areas: DWI, drug charges, and assault family-violence cases in Dallas, Collin, and Denton Counties.",
+    "Explore Gauthier Law Firm's personal injury practice areas: car accident and slip and fall claims in Dallas, Collin, and Denton Counties. Call (214) 377-0786.",
   path: ROUTES.practiceAreas,
 });
 
 const STAGES = [
   {
     title: "Early review",
-    text: "Deadlines, bond conditions, and license issues are identified right away, before they become problems.",
+    text: "Deadlines, available insurance, and the evidence that disappears first are identified right away.",
   },
   {
-    title: "Evidence investigation",
-    text: "Police reports, video, lab results, and witness information are gathered and examined for weaknesses.",
+    title: "Investigation",
+    text: "Crash or incident reports, photographs, video, and witness accounts are gathered while they still exist.",
   },
   {
-    title: "Pretrial strategy",
-    text: "Motions, negotiations, and program eligibility are evaluated against the evidence in your case.",
+    title: "Treatment and documentation",
+    text: "Medical records and bills are assembled as treatment progresses, because they establish what the injury required.",
   },
   {
-    title: "Resolution or trial",
-    text: "You get a clear explanation of your options, so decisions about your case are informed ones.",
+    title: "Negotiation or suit",
+    text: "The claim is presented to the insurer, and suit is filed when that process stalls or a deadline nears.",
   },
 ];
 
@@ -44,20 +44,20 @@ export default function PracticeAreasPage() {
         eyebrow="Practice Areas"
         title={
           <>
-            Criminal Defense <span className="text-gold-light">Practice Areas</span>
+            Personal Injury <span className="text-gold-light">Practice Areas</span>
           </>
         }
-        subtitle={`${FIRM.name} concentrates on three kinds of criminal cases: DWI, drug charges, and assault family-violence.`}
+        subtitle={`${FIRM.name} concentrates on two kinds of injury claims: car accidents and slip and fall.`}
         breadcrumbs={[{ name: "Practice Areas", path: ROUTES.practiceAreas }]}
       />
 
       <Section>
         <SectionHeading
           eyebrow="What We Handle"
-          title="Charges Avia Gauthier Defends"
-          intro="Each practice area page explains how Texas law treats the charge, the penalties involved, and questions a defense can raise."
+          title="Claims Avia Gauthier Handles"
+          intro="Each practice area page explains how Texas law treats the claim, what compensation can cover, and what shapes the outcome."
         />
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
+        <div className="mt-12 grid gap-6 md:grid-cols-2">
           {PRACTICE_AREAS.map((area, i) => (
             <FadeUp key={area.href} delay={i * 0.12} className="h-full">
               <PracticeCard
@@ -75,8 +75,8 @@ export default function PracticeAreasPage() {
       <Section tone="ink-soft">
         <SectionHeading
           eyebrow="The Process"
-          title="How a Criminal Case Typically Moves Forward"
-          intro="Every case is different, but most follow a similar path. Knowing it can make the process less overwhelming."
+          title="How an Injury Claim Typically Moves Forward"
+          intro="Every claim is different, but most follow a similar path. Knowing it can make the process less overwhelming."
         />
         <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {STAGES.map((stage, i) => (
@@ -88,9 +88,9 @@ export default function PracticeAreasPage() {
           ))}
         </div>
         <p className="mt-10 text-mist">
-          Just arrested? Start with{" "}
-          <Link href={ROUTES.afterArrest} className="text-gold-light underline underline-offset-4">
-            what to do after an arrest in Texas
+          Just hurt in a crash? Start with{" "}
+          <Link href={ROUTES.afterAccident} className="text-gold-light underline underline-offset-4">
+            what to do after a car accident in Texas
           </Link>
           .
         </p>

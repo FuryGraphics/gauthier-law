@@ -26,7 +26,7 @@ const counties = FIRM.counties.map((name) => ({ "@type": "AdministrativeArea", n
 
 const areaServed = [...LOCATIONS.map((l) => ({ "@type": "City", name: `${l.city}, Texas` })), ...counties];
 
-const knowsAbout = ["Criminal defense", ...PRACTICE_AREAS.map((p) => p.name)];
+const knowsAbout = ["Personal injury", ...PRACTICE_AREAS.map((p) => p.name)];
 
 const firmReference = { "@type": "LegalService", "@id": FIRM_ID, name: FIRM.name };
 

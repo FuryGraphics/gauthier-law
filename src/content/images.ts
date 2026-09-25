@@ -8,7 +8,7 @@ export const IMAGES = {
   aviaPortrait: {
     // Client-supplied headshot (2000px master in brand-assets/).
     src: "/images/avia-gauthier.jpg",
-    alt: "Avia Gauthier, criminal defense attorney at Gauthier Law Firm",
+    alt: "Avia Gauthier, personal injury lawyer at Gauthier Law Firm",
   },
   heroSkyline: {
     src: "/images/hero-skyline.jpg",
@@ -22,13 +22,17 @@ export const IMAGES = {
     src: "/images/office-desk.jpg",
     alt: "Law office desk with a brass lamp, law books, and a legal pad at dusk",
   },
-  dwiRoad: {
-    src: "/images/dwi-road.jpg",
-    alt: "Wet highway at night reflecting distant red and blue emergency lights",
+  carAccident: {
+    src: "/images/car-accident.jpg",
+    alt: "Damaged front bumper and broken headlight glass on a wet street at dusk",
+  },
+  slipHazard: {
+    src: "/images/slip-hazard.jpg",
+    alt: "Caution sign beside a spill on a polished tile floor in an empty corridor",
   },
   caseFiles: {
     src: "/images/case-files.jpg",
-    alt: "Case files and reading glasses on a desk under warm lamplight",
+    alt: "Claim files and reading glasses on a desk under warm lamplight",
   },
   courthouseCorridor: {
     src: "/images/courthouse-corridor.jpg",

@@ -12,9 +12,9 @@ import { CaseClimbForm } from "@/components/forms/CaseClimbForm";
 // prompt is built. Copy uses intake facts only.
 
 export const metadata = pageMetadata({
-  title: "Contact a Dallas Criminal Defense Attorney",
+  title: "Contact a Dallas Personal Injury Lawyer",
   description:
-    "Contact Gauthier Law Firm in Dallas to request a consultation with criminal defense attorney Avia Gauthier. Call (214) 377-0786 or send a message online.",
+    "Contact Gauthier Law Firm in Dallas to request a consultation with personal injury lawyer Avia Gauthier. Call (214) 377-0786 or send a message online today.",
   path: ROUTES.contact,
 });
 

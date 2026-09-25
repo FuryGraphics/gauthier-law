@@ -14,7 +14,7 @@ import { CtaBand } from "@/components/ui/CtaBand";
 export const metadata = pageMetadata({
   title: "Client Testimonials",
   description:
-    "Reviews and testimonials for Gauthier Law Firm and Dallas criminal defense attorney Avia Gauthier, who defends DWI, drug, and assault family-violence cases.",
+    "Reviews and testimonials for Gauthier Law Firm and Dallas personal injury lawyer Avia Gauthier, who represents people hurt in car accidents and in falls.",
   path: ROUTES.testimonials,
 });
 

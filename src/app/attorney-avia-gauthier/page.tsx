@@ -18,9 +18,9 @@ import { CtaBand } from "@/components/ui/CtaBand";
 // it — and verified facts should then also be passed to attorneySchema().
 
 export const metadata = pageMetadata({
-  title: "Avia Gauthier, Dallas Criminal Defense Attorney",
+  title: "Avia Gauthier, Dallas Personal Injury Attorney",
   description:
-    "Meet Avia Gauthier, the Dallas criminal defense attorney behind Gauthier Law Firm, defending DWI, drug, and assault family-violence cases in North Texas.",
+    "Meet Avia Gauthier, the Dallas personal injury attorney behind Gauthier Law Firm, representing people hurt in car accidents and falls across North Texas.",
   path: ROUTES.attorney,
   ogType: "profile",
 });
@@ -28,9 +28,9 @@ export const metadata = pageMetadata({
 // Only intake-verified facts. When the client supplies credentials (bar admission,
 // law school, memberships), add them here and to attorneySchema().
 const AT_A_GLANCE = [
-  { label: "Focus", value: "Criminal defense" },
-  { label: "Charges Defended", value: "DWI · Drug charges · Assault family-violence" },
-  { label: "Courts Served", value: "Dallas, Collin, and Denton County courts" },
+  { label: "Focus", value: "Personal injury" },
+  { label: "Claims Handled", value: "Car accidents · Slip and fall" },
+  { label: "Areas Served", value: "Dallas, Collin, and Denton Counties" },
   { label: "Office", value: "15150 Preston Road, Suite 300, Dallas, TX 75248" },
 ];
 
@@ -43,12 +43,12 @@ const APPROACH = [
   {
     icon: "search" as const,
     title: "Attention to the evidence",
-    text: "Reports, video, testing records, and deadlines are reviewed closely, because details can change how a case should be approached.",
+    text: "Crash reports, photographs, video, and medical records are reviewed closely, because details decide how a claim is valued.",
   },
   {
     icon: "scale" as const,
     title: "Informed decisions",
-    text: "Options are laid out honestly, including the risks, so each client can make decisions about their own case.",
+    text: "Settlement offers and their trade-offs are explained plainly, so each client decides with the facts in hand.",
   },
 ];
 
@@ -61,10 +61,10 @@ export default function AttorneyPage() {
         eyebrow="About the Attorney"
         title={
           <>
-            Avia Gauthier, <span className="text-gold-light">Criminal Defense Attorney</span>
+            Avia Gauthier, <span className="text-gold-light">Personal Injury Attorney</span>
           </>
         }
-        subtitle={`${FIRM.attorney} leads ${FIRM.name}, a Dallas practice defending people charged with DWI, drug offenses, and assault family-violence.`}
+        subtitle={`${FIRM.attorney} leads ${FIRM.name}, a Dallas practice representing people injured in car accidents and falls.`}
         breadcrumbs={[{ name: "About Avia Gauthier", path: ROUTES.attorney }]}
       />
 
@@ -88,23 +88,23 @@ export default function AttorneyPage() {
             <SectionHeading eyebrow="Biography" title="About Avia Gauthier" />
             <div className="prose-site mt-8">
               <p>
-                Avia Gauthier is the attorney behind {FIRM.name}, a criminal defense practice based in North Dallas.
-                The firm represents people charged with{" "}
-                <Link href={PRACTICE_AREAS[0].href}>DWI</Link>,{" "}
-                <Link href={PRACTICE_AREAS[1].href}>drug offenses</Link>, and{" "}
-                <Link href={PRACTICE_AREAS[2].href}>assault family-violence</Link> in Dallas, Collin, and Denton
-                Counties.
+                Avia Gauthier is the attorney behind {FIRM.name}, a personal injury practice based in North Dallas.
+                The firm represents people hurt in{" "}
+                <Link href={PRACTICE_AREAS[0].href}>car accidents</Link> and in{" "}
+                <Link href={PRACTICE_AREAS[1].href}>slip and fall</Link> incidents throughout Dallas, Collin, and
+                Denton Counties.
               </p>
               {/* TODO(client): add Avia's verified background and experience here. */}
               <p>
-                The firm handles criminal cases from first appearance through resolution, whether that means a
-                dismissal, a negotiated outcome, or trial. Because the practice is deliberately narrow, the same three
-                kinds of cases come up again and again: impaired driving, controlled substances, and accusations
-                between people who live together or have dated.
+                The firm handles injury claims from the first call through resolution, whether that means a negotiated
+                settlement with an insurance company or a lawsuit. Keeping the practice narrow means the same questions
+                come up again and again: who was at fault, what the injuries genuinely require, and what insurance is
+                actually available to cover it.
               </p>
               <p>
-                A criminal charge is often one of the most stressful experiences in a person&apos;s life. Avia&apos;s
-                goal is to make sure every client understands the charge, the process, and the choices ahead.
+                Being hurt through someone else&apos;s carelessness upends work, family, and finances all at once.
+                Avia&apos;s goal is to make sure every client understands the process, the timeline, and the choices
+                ahead.
               </p>
             </div>
           </div>
@@ -137,8 +137,8 @@ export default function AttorneyPage() {
       </Section>
 
       <Section tone="navy" backdrop={IMAGES.courthouseCorridor}>
-        <SectionHeading eyebrow="Practice Areas" title="Cases Avia Gauthier Handles" />
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
+        <SectionHeading eyebrow="Practice Areas" title="Claims Avia Gauthier Handles" />
+        <div className="mt-12 grid gap-6 md:grid-cols-2">
           {PRACTICE_AREAS.map((area) => (
             <PracticeCard key={area.href} icon={area.icon} title={area.name} description={area.blurb} href={area.href} />
           ))}

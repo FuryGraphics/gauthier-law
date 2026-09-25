@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import { Icon, type IconName } from "./icons";
 
-/** Non-linking card for explanatory points (defense issues, steps). Use PracticeCard for navigation. */
+/** Non-linking card for explanatory points (claim factors, steps). Use PracticeCard for navigation. */
 export function InfoCard({
   title,
   children,

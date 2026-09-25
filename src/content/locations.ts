@@ -13,48 +13,46 @@ export type LocationContent = {
   subtitle: string;
   intro: string[];
   courts: { title: string; paragraphs: string[] };
-  practiceBlurbs: Record<"dwi" | "drug-charges" | "assault-family-violence", string>;
+  practiceBlurbs: Record<"car-accidents" | "slip-and-fall", string>;
   faqs: Faq[];
 };
 
 const OFFICE_ANSWER =
-  "No. Gauthier Law Firm has one office, located at 15150 Preston Road, Suite 300, in Dallas. The firm represents clients whose cases are pending in Dallas, Collin, and Denton County courts. Call (214) 377-0786 to ask about scheduling a consultation.";
+  "No. Gauthier Law Firm has one office, located at 15150 Preston Road, Suite 300, in Dallas. The firm represents injured clients whose claims arise in Dallas, Collin, and Denton Counties. Call (214) 377-0786 to ask about scheduling a consultation.";
+
+const DEADLINE_ANSWER =
+  "Most Texas injury lawsuits must be filed within two years of the date of the injury. If a city, county, transit authority, or other governmental unit may be responsible, written notice is often required much sooner, sometimes within months. Those dates are worth confirming right away.";
 
 const dallas: LocationContent = {
   slug: "dallas",
-  seoTitle: "Criminal Defense Attorney in Dallas, TX",
+  seoTitle: "Personal Injury Lawyer in Dallas, TX",
   description:
-    "Criminal defense attorney serving Dallas, TX. Avia Gauthier defends DWI, drug, and assault family-violence cases in Dallas County courts. Call (214) 377-0786.",
+    "Personal injury lawyer serving Dallas, TX. Avia Gauthier handles car accident and slip and fall claims in Dallas County. Call (214) 377-0786 for a consultation.",
   image: IMAGES.heroSkyline,
   subtitle:
-    "From the firm's North Dallas office, attorney Avia Gauthier defends people charged with DWI, drug offenses, and assault family-violence throughout the city of Dallas.",
+    "From the firm's North Dallas office, attorney Avia Gauthier represents people injured in car accidents and falls throughout the city of Dallas.",
   intro: [
-    "Gauthier Law Firm's office is on Preston Road in North Dallas, which makes Dallas home base for the firm. Attorney Avia Gauthier represents people facing criminal charges across the city, from Uptown and Deep Ellum to Oak Cliff, Lake Highlands, and Far North Dallas.",
-    "Most of Dallas lies in Dallas County, but parts of the city extend into Collin and Denton Counties. Where an arrest happened generally determines which county's courts hear the case, so one of the first things to confirm is exactly where your case is pending.",
+    "Gauthier Law Firm's office is on Preston Road in North Dallas, which makes Dallas home base for the firm. Attorney Avia Gauthier represents injured people across the city, from Uptown and Deep Ellum to Oak Cliff, Lake Highlands, and Far North Dallas.",
+    "Dallas traffic supplies more than its share of collisions. Crashes on I-35E, the LBJ Freeway, Central Expressway, and I-30, and in the parking lots and surface streets in between, can leave people with injuries that outlast the insurance company's first offer.",
   ],
   courts: {
-    title: "Criminal Courts in Dallas County",
+    title: "Where a Dallas Injury Case Is Filed",
     paragraphs: [
-      "Dallas County criminal cases are generally heard at the Frank Crowley Courts Building near downtown Dallas. Misdemeanors, such as a first DWI or most assault family-violence charges, are typically handled in the County Criminal Courts, while felonies are handled in the Criminal District Courts.",
-      "Lower-level Class C offenses, which are punishable by fine only, are generally handled by municipal or justice courts rather than the county criminal courts.",
+      "Most injury claims are resolved with an insurance company without a lawsuit ever being filed. When filing is necessary, Dallas County civil cases are generally heard in the county courts at law or the civil district courts, which sit at the George L. Allen Sr. Courts Building downtown.",
+      "Which court hears a case usually depends on the amount in dispute. Most of Dallas lies in Dallas County, though parts of the city extend into Collin and Denton Counties, and where the collision happened can affect where a suit is filed.",
     ],
   },
   practiceBlurbs: {
-    dwi: "Defense for DWI arrests in Dallas, including ALR license hearings and felony intoxication charges.",
-    "drug-charges": "Defense for marijuana, controlled-substance, and intent-to-deliver charges filed in Dallas County.",
-    "assault-family-violence": "Defense for family-violence accusations, bond conditions, and protective orders in Dallas.",
+    "car-accidents": "Claims for people hurt in collisions on Dallas highways, surface streets, and parking lots.",
+    "slip-and-fall": "Premises claims for falls in Dallas stores, apartment complexes, and parking garages.",
   },
   faqs: [
     {
-      question: "Where will my Dallas criminal case be heard?",
+      question: "Do I have to file a lawsuit to get compensated?",
       answer:
-        "If your arrest happened in the part of Dallas that lies in Dallas County, a misdemeanor or felony case will generally be heard at the Frank Crowley Courts Building. If it happened in a portion of the city within Collin or Denton County, the case will usually be heard in that county instead. Your paperwork or an attorney can confirm the court.",
+        "Often not. Many claims resolve through negotiation with the insurance company. A lawsuit becomes necessary when the insurer disputes fault or the injuries, when an offer is unreasonable, or when the filing deadline is approaching.",
     },
-    {
-      question: "Do I have to appear in court in person?",
-      answer:
-        "It depends on the court, the charge, and the stage of the case. Some settings require the defendant to be present, while an attorney may be able to handle others. Your attorney can tell you which settings you need to attend.",
-    },
+    { question: "How long do I have to bring an injury claim in Texas?", answer: DEADLINE_ANSWER },
     {
       question: "Where is the firm's office?",
       answer:
@@ -65,156 +63,149 @@ const dallas: LocationContent = {
 
 const plano: LocationContent = {
   slug: "plano",
-  seoTitle: "Criminal Defense Attorney in Plano, TX",
+  seoTitle: "Personal Injury Lawyer in Plano, TX",
   description:
-    "Criminal defense attorney serving Plano, Texas. Avia Gauthier defends DWI, drug, and assault family-violence charges in Collin and Denton County courts.",
+    "Personal injury lawyer serving Plano, Texas. Avia Gauthier handles car accident and slip and fall claims in Collin and Denton County. Call (214) 377-0786 today.",
   image: IMAGES.officeDesk,
   subtitle:
-    "Attorney Avia Gauthier represents Plano residents and visitors facing DWI, drug, and assault family-violence charges, from the firm's office in nearby North Dallas.",
+    "Attorney Avia Gauthier represents Plano residents injured in car accidents and falls, from the firm's office in nearby North Dallas.",
   intro: [
-    "Plano residents charged with a crime can work with Gauthier Law Firm from the firm's office in nearby North Dallas. Attorney Avia Gauthier represents clients facing DWI, drug, and assault family-violence charges arising in Plano.",
-    "Most of Plano is in Collin County, while a western portion of the city lies in Denton County. That line matters: an arrest in west Plano may be prosecuted in Denton County rather than Collin County, with a different courthouse, different prosecutors, and different local procedures.",
+    "Plano residents hurt in a collision or a fall can work with Gauthier Law Firm from the firm's office in nearby North Dallas. Attorney Avia Gauthier handles injury claims arising throughout the city.",
+    "Central Expressway, the Dallas North Tollway, and the Sam Rayburn Tollway carry heavy traffic through and around Plano, and the city's retail centers and apartment communities generate their share of premises claims.",
   ],
   courts: {
-    title: "Which Courts Handle Plano Cases",
+    title: "Which County Handles a Plano Claim",
     paragraphs: [
-      "Collin County criminal cases are generally heard at the Russell A. Steindam Courts Building in McKinney. Misdemeanors are typically handled in the County Courts at Law, and felonies in the District Courts.",
-      "Cases arising in the Denton County portion of Plano are generally heard at the Denton County Courts Building in Denton.",
+      "Most of Plano is in Collin County, while a western portion of the city lies in Denton County. If a lawsuit becomes necessary, that line matters: a Collin County suit is generally filed in McKinney, and a Denton County suit in Denton.",
+      "Collin County civil cases are heard in the county courts at law and district courts at the Russell A. Steindam Courts Building in McKinney.",
     ],
   },
   practiceBlurbs: {
-    dwi: "Defense for DWI arrests in Plano, including ALR hearings and repeat-offense charges.",
-    "drug-charges": "Defense for possession and delivery charges arising from Plano stops and searches.",
-    "assault-family-violence": "Defense for family-violence accusations and protective order issues in Plano.",
+    "car-accidents": "Claims for collisions on the Tollway, Central Expressway, and Plano surface streets.",
+    "slip-and-fall": "Premises claims for falls in Plano shopping centers, restaurants, and apartment complexes.",
   },
   faqs: [
     {
-      question: "Which court will hear a Plano arrest?",
+      question: "Which county would my Plano case be filed in?",
       answer:
-        "It usually depends on where the arrest happened. Most Plano cases are filed in Collin County and heard in McKinney, but an arrest in the Denton County portion of Plano will generally be handled in Denton County.",
+        "It usually depends on where the collision or fall happened. Most Plano matters fall in Collin County and would be filed in McKinney, while incidents in the Denton County portion of the city are generally handled in Denton.",
     },
     { question: "Does Gauthier Law Firm have an office in Plano?", answer: OFFICE_ANSWER },
     {
-      question: "What should I do right after a DWI arrest in Plano?",
+      question: "What should I do after a crash in Plano?",
       answer:
-        "Keep the paperwork you were given, note the date you received any notice of license suspension, and speak with an attorney quickly. You generally have 15 days to request an ALR hearing to challenge the suspension.",
+        "Get medical attention, report the collision, and photograph the vehicles and the scene if you're able. Keep everything the insurance companies send you, and get advice before giving a recorded statement to the other driver's insurer.",
     },
   ],
 };
 
 const mckinney: LocationContent = {
   slug: "mckinney",
-  seoTitle: "Criminal Defense Attorney in McKinney, TX",
+  seoTitle: "Personal Injury Lawyer in McKinney, TX",
   description:
-    "Criminal defense attorney serving McKinney, TX. Avia Gauthier defends DWI, drug, and assault family-violence cases in Collin County courts. Call (214) 377-0786.",
+    "Personal injury lawyer serving McKinney, TX. Avia Gauthier handles car accident and slip and fall claims throughout Collin County. Call (214) 377-0786.",
   image: IMAGES.courthouseColumns,
   subtitle:
-    "McKinney is the county seat of Collin County. Attorney Avia Gauthier defends people facing DWI, drug, and assault family-violence charges in McKinney and across Collin County.",
+    "McKinney is the county seat of Collin County. Attorney Avia Gauthier represents people injured in car accidents and falls in McKinney and across the county.",
   intro: [
-    "McKinney is the county seat of Collin County and home to the courthouse where most Collin County criminal cases are heard. Attorney Avia Gauthier represents people facing DWI, drug, and assault family-violence charges in McKinney and in the surrounding Collin County communities.",
-    "Whether an arrest happened along US-75, in historic downtown McKinney, or in a neighboring Collin County city, the case will typically be handled at the county courthouse in McKinney.",
+    "McKinney is the county seat of Collin County and home to the courthouse where Collin County civil cases are heard. Attorney Avia Gauthier represents injured people in McKinney and the surrounding communities.",
+    "Collisions along US-75, US-380, and SH-121 bring many McKinney injury claims, and falls in the city's stores, restaurants, and apartment communities account for many more.",
   ],
   courts: {
-    title: "Collin County Criminal Courts",
+    title: "Collin County Civil Courts",
     paragraphs: [
-      "Collin County criminal cases are generally heard at the Russell A. Steindam Courts Building on Bloomdale Road in McKinney. Misdemeanors are typically handled in the County Courts at Law, and felonies in the District Courts.",
-      "Each court can have its own settings, procedures, and expectations, which is one reason it helps to understand how a case is likely to move before the first court date.",
+      "When an injury claim can't be resolved with the insurance company, a Collin County lawsuit is generally filed at the Russell A. Steindam Courts Building on Bloomdale Road in McKinney. County courts at law and district courts hear civil cases there, depending largely on the amount in dispute.",
+      "Most claims still settle before trial, but filing can be what moves an insurer that has not made a reasonable offer.",
     ],
   },
   practiceBlurbs: {
-    dwi: "Defense for DWI arrests in McKinney and throughout Collin County, including license hearings.",
-    "drug-charges": "Defense for marijuana, THC concentrate, and controlled-substance charges in Collin County.",
-    "assault-family-violence": "Defense for family-violence assault charges and bond conditions in McKinney.",
+    "car-accidents": "Claims for collisions on US-75, US-380, SH-121, and McKinney streets.",
+    "slip-and-fall": "Premises claims for falls on McKinney business and residential property.",
   },
   faqs: [
     {
-      question: "Where is the Collin County courthouse?",
+      question: "Where would a Collin County injury lawsuit be filed?",
       answer:
-        "Most Collin County criminal cases are heard at the Russell A. Steindam Courts Building in McKinney. Check your paperwork for the specific court and setting, or ask your attorney to confirm it.",
+        "At the Russell A. Steindam Courts Building in McKinney, which houses the county courts at law and district courts that hear Collin County civil cases.",
     },
     { question: "Does Gauthier Law Firm have an office in McKinney?", answer: OFFICE_ANSWER },
     {
-      question: "How long does a Collin County criminal case take?",
+      question: "How long does an injury claim take?",
       answer:
-        "It varies widely. A misdemeanor may resolve in a few months, while a felony or a case headed to trial can take much longer. The charge, the evidence, and the court's docket all affect the timeline.",
+        "It varies. A straightforward claim can resolve in a matter of months once treatment is complete, while a disputed claim or one that requires filing suit can take considerably longer. Settling before the medical picture is clear is usually a mistake, so treatment often sets the pace.",
     },
   ],
 };
 
 const frisco: LocationContent = {
   slug: "frisco",
-  seoTitle: "Criminal Defense Attorney in Frisco, TX",
+  seoTitle: "Personal Injury Lawyer in Frisco, TX",
   description:
-    "Criminal defense attorney serving Frisco, TX. Avia Gauthier defends DWI, drug, and assault family-violence charges in Collin and Denton County courts.",
-  image: IMAGES.dwiRoad,
+    "Personal injury lawyer serving Frisco, TX. Avia Gauthier handles car accident and slip and fall claims in Collin and Denton County. Call (214) 377-0786 today.",
+  image: IMAGES.carAccident,
   subtitle:
-    "Frisco sits in two counties. Attorney Avia Gauthier defends people charged with DWI, drug offenses, and assault family-violence in Frisco, whichever county the case is in.",
+    "Frisco sits in two counties. Attorney Avia Gauthier represents people injured in car accidents and falls there, whichever county the claim belongs to.",
   intro: [
-    "Frisco is one of the fastest-growing cities in North Texas, and it sits across two counties. Attorney Avia Gauthier represents people charged with DWI, drug offenses, and assault family-violence in Frisco, whether the case is pending in Collin County or Denton County.",
-    "Busy corridors such as the Dallas North Tollway and State Highway 121 run through the city, and many criminal cases begin with a traffic stop. Every stop has to meet legal requirements, and how a stop happened can matter to the case that follows.",
+    "Frisco is one of the fastest-growing cities in North Texas, and it sits across two counties. Attorney Avia Gauthier represents injured people in Frisco whether a claim belongs in Collin County or Denton County.",
+    "The Dallas North Tollway, SH-121, and Preston Road carry constant traffic through the city, and Frisco's shopping centers, stadiums, and apartment communities draw crowds that premises owners are responsible for keeping reasonably safe.",
   ],
   courts: {
     title: "Collin County or Denton County?",
     paragraphs: [
-      "The eastern part of Frisco lies in Collin County and the western part in Denton County. Collin County cases are generally heard at the Russell A. Steindam Courts Building in McKinney, and Denton County cases at the Denton County Courts Building in Denton.",
-      "Because the two counties have different prosecutors and local procedures, confirming where a Frisco case is filed is an important early step.",
+      "The eastern part of Frisco is in Collin County and the western part is in Denton County. A Collin County suit is generally filed at the Russell A. Steindam Courts Building in McKinney, and a Denton County suit at the Denton County Courts Building in Denton.",
+      "Because the two counties have different courts and procedures, confirming where a Frisco claim belongs is a useful early step, even while the claim is still with an insurance company.",
     ],
   },
   practiceBlurbs: {
-    dwi: "Defense for DWI arrests on Frisco roads, including the Tollway and SH-121, and ALR hearings.",
-    "drug-charges": "Defense for possession and delivery charges in both the Collin and Denton County parts of Frisco.",
-    "assault-family-violence": "Defense for family-violence accusations and protective orders arising in Frisco.",
+    "car-accidents": "Claims for collisions on the Tollway, SH-121, Preston Road, and Frisco streets.",
+    "slip-and-fall": "Premises claims for falls in Frisco retail centers, venues, and apartment complexes.",
   },
   faqs: [
     {
-      question: "Is my Frisco case in Collin County or Denton County?",
+      question: "Is my Frisco claim in Collin County or Denton County?",
       answer:
-        "It generally depends on where the alleged offense happened. The eastern part of Frisco is in Collin County and the western part is in Denton County. Your bond paperwork or court notice should list the county, and an attorney can confirm it.",
+        "It generally depends on where the collision or fall happened. The eastern part of Frisco is in Collin County and the western part is in Denton County. A crash report or incident report usually identifies the location, and an attorney can confirm the county.",
     },
     { question: "Does Gauthier Law Firm have an office in Frisco?", answer: OFFICE_ANSWER },
     {
-      question: "Can a traffic stop on the Tollway be challenged?",
+      question: "The other driver's insurer already called me. Should I give a statement?",
       answer:
-        "Any traffic stop, wherever it happens, generally requires reasonable suspicion that a traffic violation or crime occurred. If a stop didn't meet that standard, evidence gathered afterward may be subject to challenge. Whether that applies depends on the facts, including any video.",
+        "You're generally not required to give a recorded statement to the other driver's insurance company, and doing so early, before you know how badly you're hurt, can work against you. It's reasonable to get advice first.",
     },
   ],
 };
 
 const denton: LocationContent = {
   slug: "denton",
-  seoTitle: "Criminal Defense Attorney in Denton, TX",
+  seoTitle: "Personal Injury Lawyer in Denton, TX",
   description:
-    "Criminal defense attorney serving Denton, TX. Avia Gauthier defends DWI, drug, and assault family-violence cases in Denton County courts. Call (214) 377-0786.",
+    "Personal injury lawyer serving Denton, TX. Avia Gauthier handles car accident and slip and fall claims in Denton County. Call (214) 377-0786 for a consultation.",
   image: IMAGES.courthouseCorridor,
   subtitle:
-    "Attorney Avia Gauthier represents students, families, and working professionals facing DWI, drug, and assault family-violence charges in Denton and across Denton County.",
+    "Attorney Avia Gauthier represents students, families, and working people injured in car accidents and falls in Denton and across Denton County.",
   intro: [
-    "Denton is the county seat of Denton County and home to the University of North Texas and Texas Woman's University. Attorney Avia Gauthier represents people facing DWI, drug, and assault family-violence charges in Denton and throughout Denton County.",
-    "A criminal charge can be especially disruptive for students, with possible effects on enrollment, campus housing, scholarships, and future professional licensing. Those consequences are worth discussing early, alongside the charge itself.",
+    "Denton is the county seat of Denton County and home to the University of North Texas and Texas Woman's University. Attorney Avia Gauthier represents injured people in Denton and throughout the county.",
+    "I-35E and I-35W meet in Denton, and along with US-380 and Loop 288 they account for many of the area's collisions. Falls in campus-area apartments, stores, and restaurants make up much of the rest of the local injury work.",
   ],
   courts: {
-    title: "Denton County Criminal Courts",
+    title: "Denton County Civil Courts",
     paragraphs: [
-      "Denton County criminal cases are generally heard at the Denton County Courts Building in Denton. Misdemeanors are typically handled in the County Criminal Courts, and felonies in the District Courts.",
-      "Class C offenses, which are punishable by fine only, are generally handled by municipal or justice courts.",
+      "Denton County civil lawsuits are generally filed at the Denton County Courts Building in Denton, where county courts at law and district courts hear civil cases depending on the amount in dispute.",
+      "As elsewhere, most injury claims are negotiated with an insurance company first, and filing suit becomes the next step only when that process stalls or a deadline approaches.",
     ],
   },
   practiceBlurbs: {
-    dwi: "Defense for DWI arrests in Denton, including cases involving college students and license hearings.",
-    "drug-charges": "Defense for marijuana, THC vape, and controlled-substance charges in Denton County.",
-    "assault-family-violence": "Defense for family-violence and dating-violence accusations in Denton.",
+    "car-accidents": "Claims for collisions on I-35, US-380, Loop 288, and Denton city streets.",
+    "slip-and-fall": "Premises claims for falls in Denton apartments, stores, and restaurants.",
   },
   faqs: [
     {
-      question: "I'm a college student. Will a criminal charge affect my enrollment?",
+      question: "I'm a student. Can I bring a claim if I was hurt off campus?",
       answer:
-        "It can. Universities have their own student conduct processes that are separate from the criminal case, and what you say in one can affect the other. Speak with a criminal defense attorney before responding to a school inquiry about an arrest.",
+        "Yes. A claim depends on who was responsible for the collision or the dangerous condition, not on whether you're a student. If a university or other governmental entity may be involved, notice deadlines can be much shorter, so ask about them early.",
     },
-    {
-      question: "Can I still be charged with marijuana possession in Denton?",
-      answer:
-        "Yes. Possession of marijuana remains a crime under Texas law. Local enforcement policies don't change state law, and not every agency that can make an arrest in Denton is bound by city policy.",
-    },
+    { question: "What if my medical bills are more than the other driver's insurance?", answer:
+        "That happens often, because Texas requires only minimum liability limits. Uninsured and underinsured motorist coverage on your own policy may apply, and there may be other coverage available. Reviewing every applicable policy is an important step." },
     { question: "Does Gauthier Law Firm have an office in Denton?", answer: OFFICE_ANSWER },
   ],
 };

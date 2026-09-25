@@ -1,22 +1,27 @@
 import type { SVGProps } from "react";
 import {
+  Ambulance,
+  Banknote,
   BookOpen,
-  Car,
+  CarFront,
+  ClipboardList,
+  Clock,
   FileSearch,
   Gavel,
+  Handshake,
+  HeartPulse,
   Landmark,
   MapPin,
   MessageSquare,
-  Pill,
   Scale,
-  ShieldAlert,
+  Stethoscope,
+  TriangleAlert,
   type LucideProps,
 } from "lucide-react";
 
 const ICONS = {
-  car: Car,
-  pill: Pill,
-  shield: ShieldAlert,
+  car: CarFront,
+  hazard: TriangleAlert,
   scale: Scale,
   gavel: Gavel,
   landmark: Landmark,
@@ -24,6 +29,13 @@ const ICONS = {
   book: BookOpen,
   search: FileSearch,
   message: MessageSquare,
+  medical: Stethoscope,
+  injury: HeartPulse,
+  ambulance: Ambulance,
+  clipboard: ClipboardList,
+  clock: Clock,
+  money: Banknote,
+  handshake: Handshake,
 } as const;
 
 export type IconName = keyof typeof ICONS;

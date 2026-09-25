@@ -11,37 +11,36 @@ import { ImageFeature } from "@/components/ui/ImageFeature";
 import { CtaBand } from "@/components/ui/CtaBand";
 
 export const metadata = pageMetadata({
-  title: "Criminal Defense in Dallas, Collin & Denton Counties",
+  title: "Personal Injury Lawyer for Dallas, Collin & Denton Counties",
   description:
-    "Gauthier Law Firm serves Dallas, Plano, McKinney, Frisco, and Denton. Attorney Avia Gauthier defends criminal charges across Dallas, Collin & Denton Counties.",
+    "Gauthier Law Firm serves Dallas, Plano, McKinney, Frisco, and Denton. Attorney Avia Gauthier handles car accident and slip and fall claims across North Texas.",
   path: ROUTES.locations,
 });
 
 const inlineLink = "text-gold-light underline underline-offset-4";
 
-const [dwi, drug, afv] = PRACTICE_AREAS;
-const PRACTICE_LINKS = { dwi: dwi.href, drug: drug.href, afv: afv.href };
+const [carAccidents, slipAndFall] = PRACTICE_AREAS;
 
 const CITY_BLURBS: Record<string, string> = {
-  dallas: "Home of the firm's office, with most cases heard in Dallas County courts.",
-  plano: "Split between Collin and Denton Counties, which affects where a case is heard.",
-  mckinney: "The Collin County seat, where most Collin County criminal cases are heard.",
+  dallas: "Home of the firm's office, and the county where most of its claims arise.",
+  plano: "Split between Collin and Denton Counties, which affects where a suit is filed.",
+  mckinney: "The Collin County seat, where Collin County civil cases are filed.",
   frisco: "A fast-growing city spanning both Collin and Denton Counties.",
-  denton: "The Denton County seat and home to two major universities.",
+  denton: "The Denton County seat, where I-35E and I-35W meet.",
 };
 
 const COUNTIES = [
   {
     name: "Dallas County",
-    text: "Criminal cases are generally heard at the Frank Crowley Courts Building near downtown Dallas.",
+    text: "Civil cases are generally heard at the George L. Allen Sr. Courts Building in downtown Dallas.",
   },
   {
     name: "Collin County",
-    text: "Criminal cases are generally heard at the Russell A. Steindam Courts Building in McKinney.",
+    text: "Civil cases are generally heard at the Russell A. Steindam Courts Building in McKinney.",
   },
   {
     name: "Denton County",
-    text: "Criminal cases are generally heard at the Denton County Courts Building in Denton.",
+    text: "Civil cases are generally heard at the Denton County Courts Building in Denton.",
   },
 ];
 
@@ -53,10 +52,10 @@ export default function LocationsPage() {
         eyebrow="Areas We Serve"
         title={
           <>
-            Criminal Defense Across <span className="text-gold-light">North Texas</span>
+            Injury Claims Across <span className="text-gold-light">North Texas</span>
           </>
         }
-        subtitle={`From one office in Dallas, attorney ${FIRM.attorney} represents people charged with crimes in Dallas, Collin, and Denton Counties.`}
+        subtitle={`From one office in Dallas, attorney ${FIRM.attorney} represents injured people throughout Dallas, Collin, and Denton Counties.`}
         breadcrumbs={[{ name: "Areas We Serve", path: ROUTES.locations }]}
       />
 
@@ -64,7 +63,7 @@ export default function LocationsPage() {
         <SectionHeading
           eyebrow="Cities"
           title="Communities We Serve"
-          intro="Choose your city for information about local courts and the charges the firm defends there."
+          intro="Choose your city for information about local roads, courts, and the claims the firm handles there."
         />
         <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {LOCATIONS.map((loc, i) => (
@@ -81,7 +80,7 @@ export default function LocationsPage() {
       </Section>
 
       <Section tone="ink-soft">
-        <SectionHeading eyebrow="Counties" title="Three Counties, Three Court Systems" />
+        <SectionHeading eyebrow="Counties" title="Three Counties, Three Court Systems" intro="Most injury claims settle with an insurer, but if a lawsuit becomes necessary, the county decides where it is filed." />
         <div className="mt-12 grid gap-6 md:grid-cols-3">
           {COUNTIES.map((county) => (
             <div key={county.name} className="rounded-sm border border-white/10 p-7">
@@ -92,30 +91,26 @@ export default function LocationsPage() {
           ))}
         </div>
         <p className="mt-8 max-w-3xl text-sm leading-relaxed text-mist">
-          Some cities, including Dallas, Plano, and Frisco, cross county lines. The county where an alleged offense
-          happened generally determines which courts hear the case.
+          Some cities, including Dallas, Plano, and Frisco, cross county lines. Where a collision or fall happened
+          generally determines which county&apos;s courts would hear a suit.
         </p>
       </Section>
 
       <Section>
-        <ImageFeature image={IMAGES.officeDesk} eyebrow="Practice Areas" title="Focused on Three Kinds of Cases">
+        <ImageFeature image={IMAGES.officeDesk} eyebrow="Practice Areas" title="Focused on Two Kinds of Claims">
           <p>
             {FIRM.name} concentrates on{" "}
-            <Link href={PRACTICE_LINKS.dwi} className={inlineLink}>
-              DWI
-            </Link>
-            ,{" "}
-            <Link href={PRACTICE_LINKS.drug} className={inlineLink}>
-              drug
-            </Link>
-            , and{" "}
-            <Link href={PRACTICE_LINKS.afv} className={inlineLink}>
-              assault family-violence
+            <Link href={carAccidents.href} className={inlineLink}>
+              car accident
             </Link>{" "}
-            cases, wherever in these three counties they arise.
+            and{" "}
+            <Link href={slipAndFall.href} className={inlineLink}>
+              slip and fall
+            </Link>{" "}
+            claims, wherever in these three counties they arise.
           </p>
           <p>
-            Have questions about a specific case?{" "}
+            Have questions about a specific claim?{" "}
             <Link href={ROUTES.contact} className={inlineLink}>
               Contact the firm
             </Link>{" "}

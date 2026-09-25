@@ -89,7 +89,7 @@ const expectedSchema = (route) => {
   if (route === "/") return ["LegalService"];
   if (/^\/attorney/.test(route)) return ["Attorney"];
   if (/^\/locations\/[^/]+$/.test(route)) return ["LocalBusiness"];
-  if (/^\/practice-areas\/(dwi|drug-charges|assault-family-violence)$/.test(route)) return ["FAQPage"];
+  if (/^\/practice-areas\/(car-accidents|slip-and-fall)$/.test(route)) return ["FAQPage"];
   return [];
 };
 

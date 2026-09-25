@@ -8,7 +8,7 @@ import { Section } from "./Section";
 
 /** Closing consultation band reused at the bottom of pages. */
 export function CtaBand({
-  title = "Facing Criminal Charges in North Texas?",
+  title = "Injured in North Texas?",
   text,
   image = IMAGES.gavel,
 }: {
@@ -25,7 +25,7 @@ export function CtaBand({
           <span aria-hidden="true" className="mt-5 block h-0.5 w-14 bg-gold" />
           <p className="mt-6 text-lg leading-relaxed text-mist">
             {text ??
-              `Speak with attorney ${FIRM.attorney} about your charges and your options. Call ${FIRM.phone} or send a message to request a consultation.`}
+              `Speak with attorney ${FIRM.attorney} about your injuries and your options. Call ${FIRM.phone} or send a message to request a consultation.`}
           </p>
         </div>
         <div className="flex shrink-0 flex-col gap-4 sm:flex-row lg:flex-col xl:flex-row">

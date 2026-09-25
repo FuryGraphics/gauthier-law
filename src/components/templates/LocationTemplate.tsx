@@ -25,7 +25,7 @@ export function LocationTemplate({ location, content }: { location: Location; co
         eyebrow={`Serving ${location.city}, Texas`}
         title={
           <>
-            {location.city} <span className="text-gold-light">Criminal Defense Attorney</span>
+            {location.city} <span className="text-gold-light">Personal Injury Lawyer</span>
           </>
         }
         subtitle={content.subtitle}
@@ -38,7 +38,7 @@ export function LocationTemplate({ location, content }: { location: Location; co
       <Section>
         <div className="grid gap-14 lg:grid-cols-12">
           <div className="lg:col-span-7">
-            <SectionHeading eyebrow={location.counties.join(" · ")} title={`Criminal Defense for ${location.city}`} />
+            <SectionHeading eyebrow={location.counties.join(" · ")} title={`Injury Claims for ${location.city}`} />
             <div className="prose-site mt-8">
               {content.intro.map((p) => (
                 <p key={p.slice(0, 32)}>{p}</p>
@@ -85,8 +85,8 @@ export function LocationTemplate({ location, content }: { location: Location; co
       </Section>
 
       <Section tone="ink-soft">
-        <SectionHeading eyebrow="Practice Areas" title={`Charges We Defend in ${location.city}`} />
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
+        <SectionHeading eyebrow="Practice Areas" title={`Claims We Handle in ${location.city}`} />
+        <div className="mt-12 grid gap-6 md:grid-cols-2">
           {PRACTICE_AREAS.map((area, i) => (
             <FadeUp key={area.href} delay={i * 0.1} className="h-full">
               <PracticeCard
@@ -112,7 +112,7 @@ export function LocationTemplate({ location, content }: { location: Location; co
             ))}
             <p>
               Not sure what happens next? Read{" "}
-              <Link href={ROUTES.afterArrest}>what to do after an arrest in Texas</Link>.
+              <Link href={ROUTES.afterAccident}>what to do after a car accident in Texas</Link>.
             </p>
           </div>
         </div>
@@ -152,7 +152,7 @@ export function LocationTemplate({ location, content }: { location: Location; co
         </div>
       </Section>
 
-      <CtaBand title={`Facing Charges in ${location.city}?`} />
+      <CtaBand title={`Injured in ${location.city}?`} />
     </>
   );
 }
