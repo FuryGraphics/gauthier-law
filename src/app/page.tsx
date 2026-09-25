@@ -3,7 +3,6 @@ import { pageMetadata } from "@/lib/seo";
 import { PRACTICE_AREAS, ROUTES } from "@/lib/routes";
 import { legalServiceSchema } from "@/lib/schema";
 import { IMAGES } from "@/content/images";
-import { TESTIMONIALS } from "@/content/testimonials";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Hero } from "@/components/ui/Hero";
 import { AreaMarquee } from "@/components/ui/AreaMarquee";
@@ -13,7 +12,6 @@ import { PracticeCard } from "@/components/ui/PracticeCard";
 import { ImageFeature } from "@/components/ui/ImageFeature";
 import { ButtonLink } from "@/components/ui/ButtonLink";
 import { InfoCard } from "@/components/ui/InfoCard";
-import { TestimonialCarousel } from "@/components/ui/TestimonialCarousel";
 import { CtaBand } from "@/components/ui/CtaBand";
 
 // Homepage. Copy uses intake facts only. Texas attorney advertising: the client must
@@ -110,16 +108,6 @@ export default function HomePage() {
             ))}
           </div>
         </div>
-      </Section>
-
-      <Section tone="navy" backdrop={IMAGES.lawLibrary}>
-        <SectionHeading eyebrow="Client Voices" title="What Clients Say" align="center" />
-        <TestimonialCarousel testimonials={TESTIMONIALS} className="mt-12" />
-        <p className="mt-8 text-center">
-          <Link href={ROUTES.testimonials} className="text-gold-light underline underline-offset-4">
-            More client testimonials
-          </Link>
-        </p>
       </Section>
 
       <CtaBand />
