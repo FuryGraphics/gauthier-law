@@ -1,26 +1,185 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  --color-ink: #0a0a0a;
+  --color-ink-soft: #111318;
+  --color-navy: #202a44;
+  --color-navy-deep: #141a2c;
+  /* TODO(client): confirm the exact gold hex — the intake value had a typo. */
+  --color-gold: #a47e1b;
+  /* Lighter gold for small text on navy, where #A47E1B falls below AA contrast. */
+  --color-gold-light: #cfa84e;
+  --color-bone: #f4f1ea;
+  --color-mist: #a9afbd;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --animate-fade-up: fade-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-draw-line: draw-line 0.9s cubic-bezier(0.77, 0, 0.175, 1) 0.35s both;
+  --animate-ken-burns: ken-burns 14s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-marquee: marquee 45s linear infinite;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  @keyframes draw-line {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
+
+  @keyframes ken-burns {
+    from {
+      transform: scale(1.1);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@theme inline {
+  --font-display: var(--font-playfair), ui-serif, Georgia, serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    color-scheme: dark;
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    background-color: var(--color-ink);
+    color: var(--color-bone);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    text-wrap: balance;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-gold-light);
+    outline-offset: 3px;
+  }
+
+  ::selection {
+    background-color: var(--color-gold);
+    color: var(--color-navy-deep);
+  }
+}
+
+@utility container-site {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 76rem;
+  padding-inline: 1.25rem;
+
+  @media (width >= 48rem) {
+    padding-inline: 2rem;
+  }
+}
+
+/* Layered hero ground: navy glow top-right, faint gold warmth bottom-left. */
+@utility hero-backdrop {
+  background-color: var(--color-ink);
+  background-image:
+    radial-gradient(ellipse 80% 60% at 85% 0%, rgb(32 42 68 / 0.9), transparent 70%),
+    radial-gradient(ellipse 60% 50% at 0% 100%, rgb(164 126 27 / 0.1), transparent 70%);
+}
+
+@utility hero-lines {
+  background-image: repeating-linear-gradient(115deg, rgb(255 255 255 / 0.025) 0 1px, transparent 1px 28px);
+  mask-image: linear-gradient(to bottom, black, transparent 85%);
+}
+
+/* Long-form legal copy (practice pages, disclaimer, privacy policy). */
+@utility prose-site {
+  color: var(--color-mist);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+
+  & > * + * {
+    margin-top: 1.25em;
+  }
+
+  & h2 {
+    color: var(--color-bone);
+    font-size: 1.875rem;
+    line-height: 1.2;
+    margin-top: 2em;
+  }
+
+  & h3 {
+    color: var(--color-bone);
+    font-size: 1.375rem;
+    line-height: 1.3;
+    margin-top: 1.6em;
+  }
+
+  & a {
+    color: var(--color-gold-light);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  & strong {
+    color: var(--color-bone);
+    font-weight: 600;
+  }
+
+  & ul > li {
+    position: relative;
+    padding-left: 1.5em;
+  }
+
+  & ul > li + li,
+  & ol > li + li {
+    margin-top: 0.5em;
+  }
+
+  & ul > li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.85em;
+    width: 0.6em;
+    height: 1px;
+    background-color: var(--color-gold);
+  }
+
+  & ol {
+    list-style: decimal;
+    padding-left: 1.25em;
+  }
 }

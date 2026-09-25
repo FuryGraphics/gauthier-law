@@ -1,69 +1,128 @@
-import Image from "next/image";
+import Link from "next/link";
+import { pageMetadata } from "@/lib/seo";
+import { PRACTICE_AREAS, ROUTES } from "@/lib/routes";
+import { legalServiceSchema } from "@/lib/schema";
+import { IMAGES } from "@/content/images";
+import { TESTIMONIALS } from "@/content/testimonials";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { Hero } from "@/components/ui/Hero";
+import { AreaMarquee } from "@/components/ui/AreaMarquee";
+import { Section, SectionHeading } from "@/components/ui/Section";
+import { FadeUp } from "@/components/ui/FadeUp";
+import { PracticeCard } from "@/components/ui/PracticeCard";
+import { ImageFeature } from "@/components/ui/ImageFeature";
+import { ButtonLink } from "@/components/ui/ButtonLink";
+import { InfoCard } from "@/components/ui/InfoCard";
+import { TestimonialCarousel } from "@/components/ui/TestimonialCarousel";
+import { CtaBand } from "@/components/ui/CtaBand";
 
-export default function Home() {
+// Homepage. Copy uses intake facts only. Texas attorney advertising: the client must
+// review final copy before the homepage is filed/published.
+
+export const metadata = pageMetadata({
+  title: "Dallas Criminal Defense Lawyer",
+  description:
+    "Dallas criminal defense attorney Avia Gauthier defends clients facing DWI, drug, and assault family-violence charges in Dallas, Collin & Denton Counties.",
+  path: "/",
+});
+
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <>
+      <JsonLd data={legalServiceSchema()} />
+      <Hero
+        image={IMAGES.heroSkyline}
+        eyebrow="Dallas Criminal Defense"
+        title={
+          <>
+            Criminal Defense for <span className="text-gold-light">North Texas</span>
+          </>
+        }
+        subtitle="Attorney Avia Gauthier defends people charged with DWI, drug offenses, and assault family-violence across Dallas, Collin, and Denton Counties."
+      />
+
+      <AreaMarquee />
+
+      <Section>
+        <SectionHeading eyebrow="Practice Areas" title="How We Can Help" />
+        <div className="mt-12 grid gap-6 md:grid-cols-3">
+          {PRACTICE_AREAS.map((area, i) => (
+            <FadeUp key={area.href} delay={i * 0.12} className="h-full">
+              <PracticeCard
+                icon={area.icon}
+                title={area.name}
+                description={area.blurb}
+                href={area.href}
+                image={area.image}
+              />
+            </FadeUp>
+          ))}
+        </div>
+      </Section>
+
+      <Section tone="ink-soft">
+        <ImageFeature image={IMAGES.officeDesk} eyebrow="The Firm" title="Criminal Defense Rooted in Dallas">
+          <p>
+            Gauthier Law Firm is a Dallas criminal defense practice led by attorney Avia Gauthier. From the firm&apos;s
+            office on Preston Road, Avia represents people charged with DWI, drug offenses, and assault family-violence.
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
+          <p>
+            The firm serves clients in Dallas, Plano, McKinney, Frisco, Denton, and the surrounding communities. See{" "}
+            <Link href={ROUTES.locations} className="text-gold-light underline underline-offset-4">
+              all areas we serve
+            </Link>
+            .
+          </p>
+          <div className="pt-4">
+            <ButtonLink href={ROUTES.attorney} variant="outline">
+              Meet Avia Gauthier
+            </ButtonLink>
+          </div>
+        </ImageFeature>
+      </Section>
+
+      <Section>
+        <div className="grid items-center gap-12 lg:grid-cols-12">
+          <div className="lg:col-span-5">
+            <SectionHeading
+              eyebrow="Recently Arrested?"
+              title="The First Days Matter"
+              intro="Some deadlines start running before your first court date. Know your rights and what to do next."
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <ButtonLink href={ROUTES.afterArrest}>What to Do After an Arrest</ButtonLink>
+              <ButtonLink href={ROUTES.faq} variant="outline">
+                Read the FAQ
+              </ButtonLink>
+            </div>
+          </div>
+          <div className="grid gap-5 sm:grid-cols-3 lg:col-span-7">
+            {[
+              { title: "Stay silent", text: "You can decline to answer questions and ask for a lawyer." },
+              { title: "Mind deadlines", text: "After a DWI arrest, you generally have 15 days to request an ALR hearing." },
+              { title: "Follow bond terms", text: "Violating a bond condition or protective order can mean new charges." },
+            ].map((item, i) => (
+              <FadeUp key={item.title} delay={i * 0.1} className="h-full">
+                <InfoCard title={item.title} step={i + 1}>
+                  {item.text}
+                </InfoCard>
+              </FadeUp>
+            ))}
+          </div>
         </div>
-      </main>
-    </div>
+      </Section>
+
+      <Section tone="navy" backdrop={IMAGES.lawLibrary}>
+        <SectionHeading eyebrow="Client Voices" title="What Clients Say" align="center" />
+        <TestimonialCarousel testimonials={TESTIMONIALS} className="mt-12" />
+        <p className="mt-8 text-center">
+          <Link href={ROUTES.testimonials} className="text-gold-light underline underline-offset-4">
+            More client testimonials
+          </Link>
+        </p>
+      </Section>
+
+      <CtaBand />
+    </>
   );
 }
