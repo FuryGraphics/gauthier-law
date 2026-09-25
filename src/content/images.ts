@@ -6,8 +6,7 @@ export type SiteImage = { src: string; alt: string };
 // generated office photography with real photos once the client supplies them.
 export const IMAGES = {
   aviaPortrait: {
-    // Client-supplied headshot, upscaled with Higgsfield from a 150px thumbnail.
-    // TODO(client): replace with the full-resolution original headshot file.
+    // Client-supplied headshot (2000px master in brand-assets/).
     src: "/images/avia-gauthier.jpg",
     alt: "Avia Gauthier, criminal defense attorney at Gauthier Law Firm",
   },

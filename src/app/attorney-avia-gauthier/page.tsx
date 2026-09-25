@@ -16,8 +16,6 @@ import { CtaBand } from "@/components/ui/CtaBand";
 // No credentials, education, bar admissions, awards, or years in practice were
 // supplied. Every such fact stays a bracketed placeholder until the client verifies
 // it — and verified facts should then also be passed to attorneySchema().
-// The portrait is the client's headshot, upscaled from a 150px thumbnail; swap in
-// the full-resolution original when it is available.
 
 export const metadata = pageMetadata({
   title: "Avia Gauthier, Dallas Criminal Defense Attorney",
