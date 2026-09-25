@@ -22,7 +22,7 @@ export default function PrivacyPolicyPage() {
       title="Privacy Policy"
       subtitle="How information is collected, used, and protected when you use this website."
       path={ROUTES.privacy}
-      updated="[INSERT DATE OF CLIENT APPROVAL]"
+      updated="September 25, 2026"
     >
       <p>
         This Privacy Policy explains how {FIRM.name} (&ldquo;the firm,&rdquo; &ldquo;we,&rdquo; or &ldquo;us&rdquo;)

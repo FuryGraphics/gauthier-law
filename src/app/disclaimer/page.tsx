@@ -20,7 +20,7 @@ export default function DisclaimerPage() {
       title="Disclaimer"
       subtitle="Important information about using this website and what it does and doesn't mean."
       path={ROUTES.disclaimer}
-      updated="[INSERT DATE OF CLIENT APPROVAL]"
+      updated="September 25, 2026"
     >
       <h2>Attorney Advertising</h2>
       <p>

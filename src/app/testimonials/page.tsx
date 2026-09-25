@@ -14,7 +14,7 @@ import { CtaBand } from "@/components/ui/CtaBand";
 export const metadata = pageMetadata({
   title: "Client Testimonials",
   description:
-    "Read what clients say about working with Gauthier Law Firm and Dallas criminal defense attorney Avia Gauthier on DWI, drug, and family-violence cases.",
+    "Reviews and testimonials for Gauthier Law Firm and Dallas criminal defense attorney Avia Gauthier, who defends DWI, drug, and assault family-violence cases.",
   path: ROUTES.testimonials,
 });
 
@@ -29,13 +29,32 @@ export default function TestimonialsPage() {
             What Clients <span className="text-gold-light">Say</span>
           </>
         }
-        subtitle={`Feedback from people who have worked with ${FIRM.attorney} and ${FIRM.name}.`}
+        subtitle={`Reviews of ${FIRM.name}, published only in a client\u2019s own words and with their permission.`}
         breadcrumbs={[{ name: "Testimonials", path: ROUTES.testimonials }]}
       />
 
       <Section tone="navy" backdrop={IMAGES.courthouseColumns}>
-        <SectionHeading eyebrow="Client Voices" title="Client Experiences" align="center" />
-        <TestimonialCarousel testimonials={TESTIMONIALS} className="mt-12" />
+        {TESTIMONIALS.length > 0 ? (
+          <>
+            <SectionHeading eyebrow="Client Voices" title="Client Experiences" align="center" />
+            <TestimonialCarousel testimonials={TESTIMONIALS} className="mt-12" />
+          </>
+        ) : (
+          <div className="mx-auto max-w-2xl text-center">
+            <SectionHeading
+              eyebrow="Client Voices"
+              title="Reviews From Former Clients"
+              align="center"
+              intro={`${FIRM.name} publishes reviews only with a client's permission and in the client's own words. Reviews of the firm can be read and left on Facebook.`}
+            />
+            <div className="mt-10 flex justify-center">
+              <ButtonLink href={FIRM.facebook} target="_blank" rel="noopener noreferrer">
+                <FacebookIcon className="h-4 w-4" />
+                Read reviews on Facebook
+              </ButtonLink>
+            </div>
+          </div>
+        )}
       </Section>
 
       <Section>
@@ -47,9 +66,8 @@ export default function TestimonialsPage() {
               confidential details about your case in a public review.
             </p>
             <div className="mt-8">
-              <ButtonLink href={FIRM.facebook} variant="outline" target="_blank" rel="noopener noreferrer">
-                <FacebookIcon className="h-4 w-4" />
-                Visit us on Facebook
+              <ButtonLink href={ROUTES.contact} variant="outline">
+                Contact the Firm
               </ButtonLink>
             </div>
           </div>

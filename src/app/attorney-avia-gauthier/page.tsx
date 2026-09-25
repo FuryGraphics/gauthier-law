@@ -25,11 +25,13 @@ export const metadata = pageMetadata({
   ogType: "profile",
 });
 
-const CREDENTIALS = [
-  { label: "Bar Admission", value: "[INSERT VERIFIED BAR ADMISSION(S) AND YEAR]" },
-  { label: "Education", value: "[INSERT LAW SCHOOL AND DEGREE]" },
-  { label: "Professional Memberships", value: "[INSERT VERIFIED MEMBERSHIPS, IF ANY]" },
-  { label: "Courts", value: "[INSERT COURTS ADMITTED TO PRACTICE BEFORE]" },
+// Only intake-verified facts. When the client supplies credentials (bar admission,
+// law school, memberships), add them here and to attorneySchema().
+const AT_A_GLANCE = [
+  { label: "Focus", value: "Criminal defense" },
+  { label: "Charges Defended", value: "DWI · Drug charges · Assault family-violence" },
+  { label: "Courts Served", value: "Dallas, Collin, and Denton County courts" },
+  { label: "Office", value: "15150 Preston Road, Suite 300, Dallas, TX 75248" },
 ];
 
 const APPROACH = [
@@ -93,7 +95,13 @@ export default function AttorneyPage() {
                 <Link href={PRACTICE_AREAS[2].href}>assault family-violence</Link> in Dallas, Collin, and Denton
                 Counties.
               </p>
-              <p>[INSERT VERIFIED BIOGRAPHY: background, how Avia came to criminal defense, and relevant experience.]</p>
+              {/* TODO(client): add Avia's verified background and experience here. */}
+              <p>
+                The firm handles criminal cases from first appearance through resolution, whether that means a
+                dismissal, a negotiated outcome, or trial. Because the practice is deliberately narrow, the same three
+                kinds of cases come up again and again: impaired driving, controlled substances, and accusations
+                between people who live together or have dated.
+              </p>
               <p>
                 A criminal charge is often one of the most stressful experiences in a person&apos;s life. Avia&apos;s
                 goal is to make sure every client understands the charge, the process, and the choices ahead.
@@ -104,9 +112,9 @@ export default function AttorneyPage() {
       </Section>
 
       <Section tone="ink-soft">
-        <SectionHeading eyebrow="Credentials" title="Education and Admissions" />
+        <SectionHeading eyebrow="At a Glance" title="The Practice in Brief" />
         <dl className="mt-10 grid gap-px overflow-hidden rounded-sm border border-white/10 bg-white/10 md:grid-cols-2">
-          {CREDENTIALS.map((item) => (
+          {AT_A_GLANCE.map((item) => (
             <div key={item.label} className="bg-ink-soft p-7">
               <dt className="text-xs font-semibold uppercase tracking-[0.2em] text-gold-light">{item.label}</dt>
               <dd className="mt-3 text-bone">{item.value}</dd>

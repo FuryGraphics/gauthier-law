@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { PRACTICE_AREAS } from "@/lib/routes";
-import { TESTIMONIALS } from "@/content/testimonials";
 import { Hero } from "@/components/ui/Hero";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { PracticeCard } from "@/components/ui/PracticeCard";
@@ -15,6 +14,11 @@ export const metadata: Metadata = {
   title: { absolute: "Component Styleguide" },
   robots: { index: false, follow: false },
 };
+
+const SAMPLE_TESTIMONIALS = [
+  { quote: "Sample testimonial used to preview the carousel layout.", attribution: "Sample Client", context: "Sample case type" },
+  { quote: "A second sample testimonial, longer, so the layout can be checked with more text in the quote.", attribution: "Sample Client", context: "Sample case type" },
+];
 
 const SAMPLE_FAQS = [
   { question: "Sample question one?", answer: "Placeholder answer used to test the accordion layout." },
@@ -57,7 +61,7 @@ export default function StyleguidePage() {
       </Section>
       <Section tone="navy">
         <SectionHeading eyebrow="Carousel" title="Testimonials" align="center" />
-        <TestimonialCarousel testimonials={TESTIMONIALS} className="mt-12" />
+        <TestimonialCarousel testimonials={SAMPLE_TESTIMONIALS} className="mt-12" />
       </Section>
       <Section>
         <SectionHeading eyebrow="Accordion" title="FAQ accordion" />
